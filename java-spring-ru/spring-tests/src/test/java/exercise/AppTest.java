@@ -147,7 +147,7 @@ public class AppTest {
     @Test
     void testDeletePerson() throws Exception {
         MockHttpServletResponse responseDelete = mockMvc
-                .perform(delete("/delete/3"))
+                .perform(delete("/people/3"))
                 .andReturn()
                 .getResponse();
 
