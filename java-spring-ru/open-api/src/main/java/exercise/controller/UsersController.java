@@ -92,11 +92,12 @@ public class UsersController {
             @ApiResponse(responseCode = "404", description = "User with that id not found")
     })
     @PatchMapping(path = "/{id}")
-    public void updatePerson(
+    public User updateUser(
             @Parameter(description = "Id of user to be updated")
             @PathVariable long id,
             @Parameter(description = "User data to update")
-            @RequestBody PersonDto personDto) {
+            @RequestBody User user) {
+
         if (!userRepository.existsById(id)) {
             throw new UserNotFoundException(id);
         }
