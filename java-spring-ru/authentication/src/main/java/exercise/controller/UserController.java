@@ -32,7 +32,7 @@ public class UserController {
     @PostMapping(path = "")
     public User createUser(@RequestBody User user) {
         user.setPassword(encoder.encode(user.getPassword()));
-        return userRepository.save(person);
+        return userRepository.save(user);
     }
     // END
 }
